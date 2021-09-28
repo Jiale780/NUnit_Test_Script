@@ -123,7 +123,7 @@ namespace My1stAutomationScript
             Thread.Sleep(2000);
 
             // Click on "Price per unit" textbox and clear the price
-            IWebElement priceTag = testDriver.FindElement(By.XPath("//*[@id='TimeMaterialEditForm']/div/div[4]/div/span[1]/span/input[1]"));
+            IWebElement priceTag = testDriver.FindElement(By.XPath("//*[@id='TimeMaterialEditForm']/div/div[4]/div/span[1]/span"));
             priceTag.Click();
             Thread.Sleep(2000);
 

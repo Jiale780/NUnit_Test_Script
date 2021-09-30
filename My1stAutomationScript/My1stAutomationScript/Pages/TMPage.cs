@@ -139,6 +139,7 @@ namespace My1stAutomationScript.Pages
             IWebElement deleteButton = testDriver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[5]/a[2]"));
             deleteButton.Click();
 
+            // Alert of the display prompt message for the delete button
             testDriver.SwitchTo().Alert().Accept();
 
             // Assert that Time record has been deleted.

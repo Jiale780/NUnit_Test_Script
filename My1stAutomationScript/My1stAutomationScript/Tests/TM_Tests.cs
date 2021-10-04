@@ -26,7 +26,7 @@ namespace My1stAutomationScript
             homePageObj.GoToTMPage(testDriver);
         }
 
-        [Test]
+        [Test, Order(1), Description("Check if the user is able to create Time record with valid data")]
         public void CreateTMTest()
         {
             // TM Page object initialization and definition
@@ -34,7 +34,7 @@ namespace My1stAutomationScript
             tmPageObj.CreateTM(testDriver);
         }
 
-        [Test]
+        [Test, Order(2), Description("Check if the user is able to edit Time record with valid data")]
         public void EditTMTest()
         {
             // Edit Time
@@ -42,7 +42,7 @@ namespace My1stAutomationScript
             tmPageObj.EditTM(testDriver);
         }
 
-        [Test]
+        [Test, Order(3), Description("Check if the user is able to delete Material record")]
         public void DeleteTMTest()
         {
             // Delete Material
@@ -53,7 +53,7 @@ namespace My1stAutomationScript
         [TearDown]
         public void CloseTestRun()
         {
-
+            testDriver.Quit();
         }
     }
 }

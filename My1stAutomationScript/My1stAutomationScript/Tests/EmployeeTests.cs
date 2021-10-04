@@ -26,7 +26,7 @@ namespace My1stAutomationScript.Tests
             homePageObj.GoToEmployeePage(testDriver);
         }
 
-        [Test, Order(1), Description("Check if the user...")]
+        [Test, Order(1), Description("Check if the user is able to create Employee record with valid data")]
         public void CreateEmployeeTest()
         {
             // TM Page object initialization and definition
@@ -34,7 +34,7 @@ namespace My1stAutomationScript.Tests
             employeePageObj.CreateEmployee(testDriver);
         }
 
-        [Test, Order(2), Description("Check if the user...")]
+        [Test, Order(2), Description("Check if the user is able to edit Employee record with valid data")]
         public void EditEmployeeTest()
         {
             // Edit Time
@@ -42,7 +42,7 @@ namespace My1stAutomationScript.Tests
             employeePageObj.EditEmployee(testDriver);
         }
 
-        [Test, Order(3), Description("Check if the user...")]
+        [Test, Order(3), Description("Check if the user is able to delete Employee record with valid data")]
         public void DeleteEmployeeTest()
         {
             // Delete Material

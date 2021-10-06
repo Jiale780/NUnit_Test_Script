@@ -1,34 +1,25 @@
-﻿using My1stAutomationScript.Pages;
-using My1stAutomationScript.Utilities;
+﻿using NUnit_Test_Script.Pages;
+using NUnit_Test_Script.Utilities;
 using NUnit.Framework;
 using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace My1stAutomationScript.Tests
+namespace NUnit_Test_Script.Tests
 {
     [TestFixture]
+    [Parallelizable]
     class EmployeeTests : CommonDriver
     {
-        [SetUp]
-        public void GoToLoginPage()
-        {
-            // Open chrome browser
-            testDriver = new ChromeDriver();
-
-            // Login Page object initialization and definition
-            LoginPage loginPageObj = new LoginPage();
-            loginPageObj.GoToLoginPage(testDriver);
-
-            // Home Page object initialization and definition
-            HomePage homePageObj = new HomePage();
-            homePageObj.GoToEmployeePage(testDriver);
-        }
 
         [Test, Order(1), Description("Check if the user is able to create Employee record with valid data")]
         public void CreateEmployeeTest()
         {
+            // Home Page object initialization and definition
+            HomePage homePageObj = new HomePage();
+            homePageObj.GoToEmployeePage(testDriver);
+
             // TM Page object initialization and definition
             EmployeePage employeePageObj = new EmployeePage();
             employeePageObj.CreateEmployee(testDriver);
@@ -37,6 +28,10 @@ namespace My1stAutomationScript.Tests
         [Test, Order(2), Description("Check if the user is able to edit Employee record with valid data")]
         public void EditEmployeeTest()
         {
+            // Home Page object initialization and definition
+            HomePage homePageObj = new HomePage();
+            homePageObj.GoToEmployeePage(testDriver);
+
             // Edit Time
             EmployeePage employeePageObj = new EmployeePage();
             employeePageObj.EditEmployee(testDriver);
@@ -45,15 +40,14 @@ namespace My1stAutomationScript.Tests
         [Test, Order(3), Description("Check if the user is able to delete Employee record with valid data")]
         public void DeleteEmployeeTest()
         {
+            // Home Page object initialization and definition
+            HomePage homePageObj = new HomePage();
+            homePageObj.GoToEmployeePage(testDriver);
+
             // Delete Material
             EmployeePage employeePageObj = new EmployeePage();
             employeePageObj.DeleteEmployee(testDriver);
         }
 
-        [TearDown]
-        public void CloseTestRun()
-        {
-            //testDriver.Quit();
-        }
     }
 }

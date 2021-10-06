@@ -1,4 +1,4 @@
-﻿using My1stAutomationScript.Utilities;
+﻿using NUnit_Test_Script.Utilities;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using System;
@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 
-namespace My1stAutomationScript.Pages
+namespace NUnit_Test_Script.Pages
 {
     class TMPage
     {
@@ -20,6 +20,7 @@ namespace My1stAutomationScript.Pages
             IWebElement typeCodeDropdown = testDriver.FindElement(By.XPath("//*[@id='TimeMaterialEditForm']/div/div[1]/div/span[1]/span/span[2]/span"));
             typeCodeDropdown.Click();
 
+            Thread.Sleep(2000);
             IWebElement selectTime = testDriver.FindElement(By.XPath("//*[@id='TypeCode_listbox']/li[2]"));
             selectTime.Click();
 
@@ -40,9 +41,10 @@ namespace My1stAutomationScript.Pages
             // Click on "Save" button
             IWebElement saveButton = testDriver.FindElement(By.Id("SaveButton"));
             saveButton.Click();
-            Thread.Sleep(5000);
+            //Thread.Sleep(5000);
 
             // Click on "Go to the last page" button
+            Thread.Sleep(5000);
             IWebElement goToLastPageButton = testDriver.FindElement(By.XPath("//*[@id='tmsGrid']/div[4]/a[4]/span"));
             goToLastPageButton.Click();
 

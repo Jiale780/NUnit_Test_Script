@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace My1stAutomationScript.Utilities
+namespace NUnit_Test_Script.Utilities
 {
     class Wait
     {

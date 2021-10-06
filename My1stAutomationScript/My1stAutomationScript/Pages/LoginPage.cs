@@ -1,4 +1,4 @@
-﻿using My1stAutomationScript.Utilities;
+﻿using NUnit_Test_Script.Utilities;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 
-namespace My1stAutomationScript.Pages
+namespace NUnit_Test_Script.Pages
 {
     class LoginPage
     {

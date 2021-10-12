@@ -122,14 +122,14 @@ namespace NUnit_Test_Script.Pages
                 // Check whether the Check box is toggled on 
                 Assert.That(checkBox.Selected);
 
-                // Identify "GroupsList" textbox and Input Groupslist
-                Wait.WaitForElementToBeClickable(testDriver, "XPath", "//*[@id='UserEditForm']/div/div[8]/div/div/div[1]", 2);
-                IWebElement groupsListTextBox = testDriver.FindElement(By.XPath("//*[@id='UserEditForm']/div/div[8]/div/div/div[1]"));
-                groupsListTextBox.Click();
-
-                Wait.WaitForElementToBeClickable(testDriver, "XPath", "//*[@id='groupList_listbox']/li[11]", 2);
-                IWebElement groupsListIDTextBox = testDriver.FindElement(By.XPath("//*[@id='groupList_listbox']/li[11]"));
-                groupsListIDTextBox.Click();
+                //// Identify "GroupsList" textbox and Input Groupslist
+                //Wait.WaitForElementToBeClickable(testDriver, "XPath", "//*[@id='UserEditForm']/div/div[8]/div/div/div[1]", 2);
+                //IWebElement groupsListTextBox = testDriver.FindElement(By.XPath("//*[@id='UserEditForm']/div/div[8]/div/div/div[1]"));
+                //groupsListTextBox.Click();
+                //
+                //Wait.WaitForElementToBeClickable(testDriver, "XPath", "//*[@id='groupList_listbox']/li[11]", 2);
+                //IWebElement groupsListIDTextBox = testDriver.FindElement(By.XPath("//*[@id='groupList_listbox']/li[11]"));
+                //groupsListIDTextBox.Click();
 
                 // Click on "Save" button
                 IWebElement saveButton1 = testDriver.FindElement(By.Id("SaveButton"));

@@ -14,9 +14,11 @@ namespace NUnit_Test_Script.Pages
         public void GoToLoginPage(IWebDriver testDriver)
         {
             // Launch turn up portal and maximize window
-            testDriver.Navigate().GoToUrl("http://horse.industryconnect.io/Account/Login?ReturnUrl=%2f");
+            string loginPagePath = "http://horse.industryconnect.io/Account/Login?ReturnUrl=%2f";
+            testDriver.Navigate().GoToUrl(loginPagePath);
             testDriver.Manage().Window.Maximize();
-            Thread.Sleep(2000);
+            testDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            testDriver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(20);
 
             try
             {

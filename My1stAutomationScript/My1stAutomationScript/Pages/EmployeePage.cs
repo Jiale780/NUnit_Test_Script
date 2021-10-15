@@ -5,10 +5,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
+using NUnit_Test_Script.TestDatabase;
 
 namespace NUnit_Test_Script.Pages
 {
-    class EmployeePage
+    class EmployeePage 
     {
         public void CreateEmployee(IWebDriver testDriver)
         {
@@ -20,22 +21,22 @@ namespace NUnit_Test_Script.Pages
             // Identify "Name" from Textbox and Input name
             //Wait.WaitForElementToExist(testDriver, "XPath", "//*[@id='Name']", 2);
             IWebElement employeeName = testDriver.FindElement(By.Id("Name"));
-            employeeName.SendKeys("Fay Adios");
+            employeeName.SendKeys(TestEmployeeData.newName);
 
             // Identify "Username" from Textbox and Input username
             //Wait.WaitForElementToExist(testDriver, "XPath", "//*[@id='Username']", 2);
             IWebElement usernameTextBox = testDriver.FindElement(By.Id("Username"));
-            usernameTextBox.SendKeys("Fay");
+            usernameTextBox.SendKeys(TestEmployeeData.newUserName);
 
             // Identify "Password" from Textbox and Input password
             //Wait.WaitForElementToExist(testDriver, "XPath", "//*[@id='Password']", 2);
             IWebElement passwordTextBox = testDriver.FindElement(By.Id("Password"));
-            passwordTextBox.SendKeys("Tests123%");
+            passwordTextBox.SendKeys(TestEmployeeData.newPassword);
 
             // Identify "reTypePassword" from Textbox and Input RetypePassword
             //Wait.WaitForElementToExist(testDriver, "XPath", "//*[@id='RetypePassword']", 2);
             IWebElement reTypePasswordTextBox = testDriver.FindElement(By.Id("RetypePassword"));
-            reTypePasswordTextBox.SendKeys("Tests123%");
+            reTypePasswordTextBox.SendKeys(TestEmployeeData.newRetypePassword);
 
             // Selecting CheckBox
             //Wait.WaitForElementToExist(testDriver, "XPath", "//*[@id='IsAdmin']", 2);
@@ -72,8 +73,8 @@ namespace NUnit_Test_Script.Pages
             IWebElement newUsername = testDriver.FindElement(By.XPath("//*[@id='usersGrid']/div[3]/table/tbody/tr[last()]/td[2]"));
 
             // Assertion
-            Assert.That(newEmployeeName.Text == "Fay Adios", "Actual Employee Name and expected employee name do not match");
-            Assert.That(newUsername.Text == "Fay", "Actual Username and expected username do not match");
+            Assert.That(newEmployeeName.Text == TestEmployeeData.newName, "Actual Employee Name and expected employee name do not match");
+            Assert.That(newUsername.Text == TestEmployeeData.newUserName, "Actual Username and expected username do not match");
         }
         public void EditEmployee(IWebDriver testDriver)
         {
@@ -95,25 +96,25 @@ namespace NUnit_Test_Script.Pages
                 Wait.WaitForElementToExist(testDriver, "XPath", "//*[@id='Name']", 2);
                 IWebElement employeeName = testDriver.FindElement(By.Id("Name"));
                 employeeName.Clear();
-                employeeName.SendKeys("Fin Adios");
+                employeeName.SendKeys(TestEmployeeData.editName);
 
                 // Identify "Username" from Textbox and Input username
                 Wait.WaitForElementToExist(testDriver, "XPath", "//*[@id='Username']", 2);
                 IWebElement usernameTextBox = testDriver.FindElement(By.Id("Username"));
                 usernameTextBox.Clear();
-                usernameTextBox.SendKeys("Fin");
+                usernameTextBox.SendKeys(TestEmployeeData.editUserName);
 
                 // Identify "Password" from Textbox and Input password
                 Wait.WaitForElementToExist(testDriver, "XPath", "//*[@id='Password']", 2);
                 IWebElement passwordTextBox = testDriver.FindElement(By.Id("Password"));
                 passwordTextBox.Clear();
-                passwordTextBox.SendKeys("Sample123%");
+                passwordTextBox.SendKeys(TestEmployeeData.editPassword);
 
                 // Identify "reTypePassword" from Textbox and Input RetypePassword
                 Wait.WaitForElementToExist(testDriver, "XPath", "//*[@id='RetypePassword']", 2);
                 IWebElement reTypePasswordTextBox = testDriver.FindElement(By.Id("RetypePassword"));
                 reTypePasswordTextBox.Clear();
-                reTypePasswordTextBox.SendKeys("Sample123%");
+                reTypePasswordTextBox.SendKeys(TestEmployeeData.editRetypePassword);
 
                 // Selecting CheckBox
                 Wait.WaitForElementToExist(testDriver, "XPath", "//*[@id='IsAdmin']", 2);
@@ -151,8 +152,8 @@ namespace NUnit_Test_Script.Pages
                 IWebElement editedUsername = testDriver.FindElement(By.XPath("//*[@id='usersGrid']/div[3]/table/tbody/tr[last()]/td[2]"));
 
                 // Assertion
-                Assert.That(editedEmployeeName.Text == "Fin Adios", "Actual Employee Name and expected employee name do not match");
-                Assert.That(editedUsername.Text == "Fin", "Actual Username and expected username do not match");
+                Assert.That(editedEmployeeName.Text == TestEmployeeData.editName, "Actual Employee Name and expected employee name do not match");
+                Assert.That(editedUsername.Text == TestEmployeeData.editUserName, "Actual Username and expected username do not match");
             }
             else
             {
@@ -182,14 +183,13 @@ namespace NUnit_Test_Script.Pages
                 IWebElement editedUsername = testDriver.FindElement(By.XPath("//*[@id='usersGrid']/div[3]/table/tbody/tr[last()]/td[2]"));
 
                 // Assertion
-                Assert.That(editedEmployeeName.Text == "Fin Adios", "Actual Employee Name and expected employee name do not match");
-                Assert.That(editedUsername.Text == "Fin", "Actual Username and expected username do not match");
+                Assert.That(editedEmployeeName.Text == TestEmployeeData.editName, "Actual Employee Name and expected employee name do not match");
+                Assert.That(editedUsername.Text == TestEmployeeData.editUserName, "Actual Username and expected username do not match");
             }
             else
             {
                 Assert.Fail("Record to be deleted hasn't been found. Record is not deleted.");
             }
-
         }
     }
 }

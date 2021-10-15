@@ -8,7 +8,7 @@ using System.Text;
 
 namespace NUnit_Test_Script.Tests
 {
-    [TestFixture]
+    [TestFixture, Description("Navigate to the Employee Page")]
     [Parallelizable]
     class EmployeeTests : CommonDriver
     {

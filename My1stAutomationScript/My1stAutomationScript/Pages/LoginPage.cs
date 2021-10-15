@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
+using NUnit_Test_Script.TestDatabase;
 
 namespace NUnit_Test_Script.Pages
 {
@@ -24,11 +25,11 @@ namespace NUnit_Test_Script.Pages
             {
                 // Identify the username textbox enter valid username
                 IWebElement usernameTextBox = testDriver.FindElement(By.Id("UserName"));
-                usernameTextBox.SendKeys("hari");
+                usernameTextBox.SendKeys(TestLoginData.username);
 
                 // Identify password textbox enter valid password
                 IWebElement passwordTextBox = testDriver.FindElement(By.Id("Password"));
-                passwordTextBox.SendKeys("123123");
+                passwordTextBox.SendKeys(TestLoginData.password);
 
                 // Identify login button and click
                 Wait.WaitForElementToBeClickable(testDriver, "XPath", "//*[@id='loginForm']/form/div[3]/input[1]", 2);

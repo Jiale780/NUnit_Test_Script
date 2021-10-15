@@ -8,7 +8,7 @@ using System.Threading;
 
 namespace NUnit_Test_Script
 {
-    [TestFixture]
+    [TestFixture, Description("Navigate to the Time & Material Page")]
     [Parallelizable]
     class TM_Tests : CommonDriver
     {
